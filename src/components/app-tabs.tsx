@@ -24,13 +24,17 @@ export default function AppTabs() {
       <NativeTabs.Trigger name="explore">
         <NativeTabs.Trigger.Label>Explore</NativeTabs.Trigger.Label>
         <NativeTabs.Trigger.Icon
-          src={require('@/assets/images/tabIcons/explore.png')}
+          src={require('@/assets/images/compass.png')}
           renderingMode="template"
         />
       </NativeTabs.Trigger>
 
       <NativeTabs.Trigger name="books">
-        <NativeTabs.Trigger.Label>Books</NativeTabs.Trigger.Label>
+        <NativeTabs.Trigger.Label>My Books</NativeTabs.Trigger.Label>
+        <NativeTabs.Trigger.Icon
+          src={require('@/assets/images/book-open-cover.png')}
+          renderingMode="template"
+        />
      </NativeTabs.Trigger>
       
     </NativeTabs>
