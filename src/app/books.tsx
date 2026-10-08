@@ -1,133 +1,73 @@
-import { View, Text } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { ThemedText } from '@/components/themed-text';
+import { ThemedView } from '@/components/themed-view';
 
 export default function Books() {
   return (
-    <View style={{ flex: 1, backgroundColor: 'black', padding: 20 }}>
-
-      <Text
-        style={{
-          color: 'white',
-          fontSize: 34,
-          fontWeight: 'bold',
-          marginTop: 30,
-          marginBottom: 8,
-        }}
-      >
+    <ThemedView style={styles.container}>
+      
+      <ThemedText type="subtitle" style={styles.header}>
         My Books
-      </Text>
+      </ThemedText>
 
-      <Text
-        style={{
-          color: 'gray',
-          fontSize: 17,
-          marginBottom: 35,
-        }}
-      >
+      <ThemedText style={styles.subtitleText}>
         Books you've saved
-      </Text>
+      </ThemedText>
 
-      <View
-        style={{
-          backgroundColor: '#181818',
-          padding: 20,
-          borderRadius: 18,
-          marginBottom: 15,
-        }}
-      >
-        <Text style={{ color: 'gray', fontSize: 14 }}>
-          FICTION
-        </Text>
+      <ThemedView style={styles.card}>
+        <ThemedText type="small" style={styles.categoryText}>FICTION</ThemedText>
+        <ThemedText style={styles.bookTitle}>Harry Potter</ThemedText>
+        <ThemedText style={styles.authorText}>J.K. Rowling</ThemedText>
+      </ThemedView>
 
-        <Text
-          style={{
-            color: 'white',
-            fontSize: 24,
-            fontWeight: 'bold',
-            marginTop: 8,
-          }}
-        >
-          Harry Potter
-        </Text>
+      <ThemedView style={styles.card}>
+        <ThemedText type="small" style={styles.categoryText}>FICTION</ThemedText>
+        <ThemedText style={styles.bookTitle}>The Hobbit</ThemedText>
+        <ThemedText style={styles.authorText}>J.R.R. Tolkien</ThemedText>
+      </ThemedView>
 
-        <Text
-          style={{
-            color: 'gray',
-            fontSize: 16,
-            marginTop: 5,
-          }}
-        >
-          J.K. Rowling
-        </Text>
-      </View>
+      <ThemedView style={styles.card}>
+        <ThemedText type="small" style={styles.categoryText}>SELF DEVELOPMENT</ThemedText>
+        <ThemedText style={styles.bookTitle}>Atomic Habits</ThemedText>
+        <ThemedText style={styles.authorText}>James Clear</ThemedText>
+      </ThemedView>
 
-      <View
-        style={{
-          backgroundColor: '#181818',
-          padding: 20,
-          borderRadius: 18,
-          marginBottom: 15,
-        }}
-      >
-        <Text style={{ color: 'gray', fontSize: 14 }}>
-          FICTION
-        </Text>
-
-        <Text
-          style={{
-            color: 'white',
-            fontSize: 24,
-            fontWeight: 'bold',
-            marginTop: 8,
-          }}
-        >
-          The Hobbit
-        </Text>
-
-        <Text
-          style={{
-            color: 'gray',
-            fontSize: 16,
-            marginTop: 5,
-          }}
-        >
-          J.R.R. Tolkien
-        </Text>
-      </View>
-
-      <View
-        style={{
-          backgroundColor: '#181818',
-          padding: 20,
-          borderRadius: 18,
-          marginBottom: 15,
-        }}
-      >
-        <Text style={{ color: 'gray', fontSize: 14 }}>
-          SELF DEVELOPMENT
-        </Text>
-
-        <Text
-          style={{
-            color: 'white',
-            fontSize: 24,
-            fontWeight: 'bold',
-            marginTop: 8,
-          }}
-        >
-          Atomic Habits
-        </Text>
-
-        <Text
-          style={{
-            color: 'gray',
-            fontSize: 16,
-            marginTop: 5,
-          }}
-        >
-          James Clear
-        </Text>
-      </View>
-
-    </View>
+    </ThemedView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+  },
+  header: {
+    marginTop: 30,
+    marginBottom: 8,
+  },
+  subtitleText: {
+    fontSize: 17,
+    marginBottom: 35,
+    opacity: 0.6, 
+  },
+  card: {
+    padding: 20,
+    borderRadius: 18,
+    marginBottom: 15,
+    borderWidth: 1,
+    borderColor: 'rgba(150, 150, 150, 0.2)', // Adds a subtle border so the cards stand out from the background in both light and dark modes
+  },
+  categoryText: {
+    opacity: 0.6,
+  },
+  bookTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginTop: 8,
+  },
+  authorText: {
+    fontSize: 16,
+    marginTop: 5,
+    opacity: 0.8,
+  },
+});

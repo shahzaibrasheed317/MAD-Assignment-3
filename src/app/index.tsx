@@ -1,140 +1,127 @@
-import { View, Text } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { ThemedText } from '@/components/themed-text';
+import { ThemedView } from '@/components/themed-view';
 
 export default function HomeScreen() {
   return (
-    <View style={{ flex: 1, backgroundColor: 'black', padding: 20 }}>
-
-      <Text
-        style={{
-          fontSize: 34,
-          fontWeight: 'bold',
-          color: 'white',
-          marginTop: 30,
-          marginBottom: 8,
-        }}
-      >
+    <ThemedView style={styles.container}>
+      
+      <ThemedText style={styles.header}>
         E-Book
-      </Text>
+      </ThemedText>
 
-      <Text
-        style={{
-          fontSize: 18,
-          color: 'gray',
-          marginBottom: 35,
-        }}
-      >
+      <ThemedText style={styles.subtitleText}>
         Your world of books
-      </Text>
+      </ThemedText>
 
-      <Text
-        style={{
-          fontSize: 15,
-          color: 'gray',
-          marginBottom: 8,
-        }}
-      >
+      <ThemedText style={styles.infoText}>
         Muhammad Shahzaib Rasheed
-      </Text>
+      </ThemedText>
 
-      <Text
-        style={{
-          fontSize: 15,
-          color: 'gray',
-          marginBottom: 35,
-        }}
-      >
+      <ThemedText style={styles.infoTextBottom}>
         Roll No: 2025(S)-ADP-CS-02
-      </Text>
+      </ThemedText>
 
-      <View
-        style={{
-          backgroundColor: '#1E1E1E',
-          padding: 20,
-          borderRadius: 15,
-          marginBottom: 30,
-        }}
-      >
-        <Text
-          style={{
-            fontSize: 16,
-            color: 'gray',
-            marginBottom: 8,
-          }}
-        >
+      <ThemedView style={styles.featuredCard}>
+        <ThemedText style={styles.featuredLabel}>
           Featured Book
-        </Text>
-
-        <Text
-          style={{
-            fontSize: 26,
-            fontWeight: 'bold',
-            color: 'white',
-            marginBottom: 8,
-          }}
-        >
+        </ThemedText>
+        
+        <ThemedText style={styles.featuredTitle}>
           Harry Potter
-        </Text>
-
-        <Text
-          style={{
-            fontSize: 16,
-            color: 'lightgray',
-          }}
-        >
+        </ThemedText>
+        
+        <ThemedText style={styles.featuredDesc}>
           Enter a magical world of adventure and mystery.
-        </Text>
-      </View>
+        </ThemedText>
+      </ThemedView>
 
-      <Text
-        style={{
-          fontSize: 24,
-          fontWeight: 'bold',
-          color: 'white',
-          marginBottom: 18,
-        }}
-      >
+      <ThemedText style={styles.sectionTitle}>
         Popular Books
-      </Text>
+      </ThemedText>
 
-      <View
-        style={{
-          backgroundColor: '#1E1E1E',
-          padding: 18,
-          borderRadius: 12,
-          marginBottom: 12,
-        }}
-      >
-        <Text style={{ fontSize: 19, color: 'white' }}>
+      <ThemedView style={styles.listItem}>
+        <ThemedText style={styles.listText}>
           The Alchemist
-        </Text>
-      </View>
+        </ThemedText>
+      </ThemedView>
 
-      <View
-        style={{
-          backgroundColor: '#1E1E1E',
-          padding: 18,
-          borderRadius: 12,
-          marginBottom: 12,
-        }}
-      >
-        <Text style={{ fontSize: 19, color: 'white' }}>
+      <ThemedView style={styles.listItem}>
+        <ThemedText style={styles.listText}>
           Atomic Habits
-        </Text>
-      </View>
+        </ThemedText>
+      </ThemedView>
 
-      <View
-        style={{
-          backgroundColor: '#1E1E1E',
-          padding: 18,
-          borderRadius: 12,
-          marginBottom: 12,
-        }}
-      >
-        <Text style={{ fontSize: 19, color: 'white' }}>
+      <ThemedView style={styles.listItem}>
+        <ThemedText style={styles.listText}>
           The Hobbit
-        </Text>
-      </View>
+        </ThemedText>
+      </ThemedView>
 
-    </View>
+    </ThemedView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+  },
+  header: {
+    fontSize: 34,
+    fontWeight: 'bold',
+    marginTop: 30,
+    marginBottom: 8,
+  },
+  subtitleText: {
+    fontSize: 18,
+    marginBottom: 35,
+    opacity: 0.6, // Replaces 'gray'
+  },
+  infoText: {
+    fontSize: 15,
+    marginBottom: 8,
+    opacity: 0.6,
+  },
+  infoTextBottom: {
+    fontSize: 15,
+    marginBottom: 35,
+    opacity: 0.6,
+  },
+  featuredCard: {
+    padding: 20,
+    borderRadius: 15,
+    marginBottom: 30,
+    borderWidth: 1,
+    borderColor: 'rgba(150, 150, 150, 0.2)', // Replaces hardcoded '#1E1E1E' to support both themes
+  },
+  featuredLabel: {
+    fontSize: 16,
+    marginBottom: 8,
+    opacity: 0.6,
+  },
+  featuredTitle: {
+    fontSize: 26,
+    fontWeight: 'bold',
+    marginBottom: 8,
+  },
+  featuredDesc: {
+    fontSize: 16,
+    opacity: 0.8, // Replaces 'lightgray'
+  },
+  sectionTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 18,
+  },
+  listItem: {
+    padding: 18,
+    borderRadius: 12,
+    marginBottom: 12,
+    borderWidth: 1,
+    borderColor: 'rgba(150, 150, 150, 0.2)',
+  },
+  listText: {
+    fontSize: 19,
+  },
+});

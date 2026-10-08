@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "E-Book",
-    "slug": "E-Book",
+    "name": "Readify",
+    "slug": "Readify",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -29,7 +29,7 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#208AEF",
+          "backgroundColor": "#4227a3",
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 76
         }
@@ -42,7 +42,7 @@
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "5c09b666-3793-4af3-b7ac-02a9c29927ad"
+        "projectId": "aa1de00d-d3e8-4858-ad2a-c337eed5aa8f"
       }
     }
   }

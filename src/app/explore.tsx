@@ -1,110 +1,96 @@
-import { View, Text } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { ThemedText } from '@/components/themed-text';
+import { ThemedView } from '@/components/themed-view';
 
 export default function Explore() {
   return (
-    <View style={{ flex: 1, backgroundColor: 'black', padding: 20 }}>
-
-      <Text
-        style={{
-          color: 'white',
-          fontSize: 34,
-          fontWeight: 'bold',
-          marginTop: 30,
-          marginBottom: 8,
-        }}
-      >
+    <ThemedView style={styles.container}>
+      
+      <ThemedText type="subtitle" style={styles.header}>
         Explore
-      </Text>
+      </ThemedText>
 
-      <Text
-        style={{
-          color: 'gray',
-          fontSize: 17,
-          marginBottom: 35,
-        }}
-      >
+      <ThemedText style={styles.subtitleText}>
         Find your next book
-      </Text>
+      </ThemedText>
 
-      <Text
-        style={{
-          color: 'white',
-          fontSize: 22,
-          fontWeight: 'bold',
-          marginBottom: 18,
-        }}
-      >
+      <ThemedText style={styles.sectionTitle}>
         Categories
-      </Text>
+      </ThemedText>
 
-      <View
-        style={{
-          backgroundColor: '#181818',
-          padding: 22,
-          borderRadius: 18,
-          marginBottom: 12,
-        }}
-      >
-        <Text style={{ color: 'white', fontSize: 21, fontWeight: 'bold' }}>
+      <ThemedView style={styles.card}>
+        <ThemedText style={styles.cardTitle}>
           Fiction
-        </Text>
-
-        <Text style={{ color: 'gray', fontSize: 15, marginTop: 5 }}>
+        </ThemedText>
+        <ThemedText style={styles.cardDescription}>
           Adventures, fantasy and stories
-        </Text>
-      </View>
+        </ThemedText>
+      </ThemedView>
 
-      <View
-        style={{
-          backgroundColor: '#181818',
-          padding: 22,
-          borderRadius: 18,
-          marginBottom: 12,
-        }}
-      >
-        <Text style={{ color: 'white', fontSize: 21, fontWeight: 'bold' }}>
+      <ThemedView style={styles.card}>
+        <ThemedText style={styles.cardTitle}>
           Self Development
-        </Text>
-
-        <Text style={{ color: 'gray', fontSize: 15, marginTop: 5 }}>
+        </ThemedText>
+        <ThemedText style={styles.cardDescription}>
           Improve yourself and your habits
-        </Text>
-      </View>
+        </ThemedText>
+      </ThemedView>
 
-      <View
-        style={{
-          backgroundColor: '#181818',
-          padding: 22,
-          borderRadius: 18,
-          marginBottom: 12,
-        }}
-      >
-        <Text style={{ color: 'white', fontSize: 21, fontWeight: 'bold' }}>
+      <ThemedView style={styles.card}>
+        <ThemedText style={styles.cardTitle}>
           Mystery
-        </Text>
-
-        <Text style={{ color: 'gray', fontSize: 15, marginTop: 5 }}>
+        </ThemedText>
+        <ThemedText style={styles.cardDescription}>
           Secrets, puzzles and investigations
-        </Text>
-      </View>
+        </ThemedText>
+      </ThemedView>
 
-      <View
-        style={{
-          backgroundColor: '#181818',
-          padding: 22,
-          borderRadius: 18,
-          marginBottom: 12,
-        }}
-      >
-        <Text style={{ color: 'white', fontSize: 21, fontWeight: 'bold' }}>
+      <ThemedView style={styles.card}>
+        <ThemedText style={styles.cardTitle}>
           History
-        </Text>
-
-        <Text style={{ color: 'gray', fontSize: 15, marginTop: 5 }}>
+        </ThemedText>
+        <ThemedText style={styles.cardDescription}>
           Stories and events from the past
-        </Text>
-      </View>
+        </ThemedText>
+      </ThemedView>
 
-    </View>
+    </ThemedView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+  },
+  header: {
+    marginTop: 30,
+    marginBottom: 8,
+  },
+  subtitleText: {
+    fontSize: 17,
+    marginBottom: 35,
+    opacity: 0.6, 
+  },
+  sectionTitle: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    marginBottom: 18,
+  },
+  card: {
+    padding: 22,
+    borderRadius: 18,
+    marginBottom: 12,
+    borderWidth: 1,
+    borderColor: 'rgba(150, 150, 150, 0.2)', 
+  },
+  cardTitle: {
+    fontSize: 21,
+    fontWeight: 'bold',
+  },
+  cardDescription: {
+    fontSize: 15,
+    marginTop: 5,
+    opacity: 0.6, 
+  },
+});
