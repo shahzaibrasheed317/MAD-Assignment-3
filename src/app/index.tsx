@@ -1,63 +1,67 @@
-import { StyleSheet } from 'react-native';
+import React from 'react';
+import { StyleSheet, ScrollView } from 'react-native';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 
 export default function HomeScreen() {
   return (
     <ThemedView style={styles.container}>
-      
-      <ThemedText style={styles.header}>
-        E-Book
-      </ThemedText>
-
-      <ThemedText style={styles.subtitleText}>
-        Your world of books
-      </ThemedText>
-
-      <ThemedText style={styles.infoText}>
-        Muhammad Shahzaib Rasheed
-      </ThemedText>
-
-      <ThemedText style={styles.infoTextBottom}>
-        Roll No: 2025(S)-ADP-CS-02
-      </ThemedText>
-
-      <ThemedView style={styles.featuredCard}>
-        <ThemedText style={styles.featuredLabel}>
-          Featured Book
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.scrollContent}
+      >
+        <ThemedText style={styles.header}>
+          E-Book
         </ThemedText>
-        
-        <ThemedText style={styles.featuredTitle}>
-          Harry Potter
-        </ThemedText>
-        
-        <ThemedText style={styles.featuredDesc}>
-          Enter a magical world of adventure and mystery.
-        </ThemedText>
-      </ThemedView>
 
-      <ThemedText style={styles.sectionTitle}>
-        Popular Books
-      </ThemedText>
-
-      <ThemedView style={styles.listItem}>
-        <ThemedText style={styles.listText}>
-          The Alchemist
+        <ThemedText style={styles.subtitleText}>
+          Your world of books
         </ThemedText>
-      </ThemedView>
 
-      <ThemedView style={styles.listItem}>
-        <ThemedText style={styles.listText}>
-          Atomic Habits
+        <ThemedText style={styles.infoText}>
+          Muhammad Shahzaib Rasheed
         </ThemedText>
-      </ThemedView>
 
-      <ThemedView style={styles.listItem}>
-        <ThemedText style={styles.listText}>
-          The Hobbit
+        <ThemedText style={styles.infoTextBottom}>
+          Roll No: 2025(S)-ADP-CS-02
         </ThemedText>
-      </ThemedView>
 
+        <ThemedView style={styles.featuredCard}>
+          <ThemedText style={styles.featuredLabel}>
+            Featured Book
+          </ThemedText>
+
+          <ThemedText style={styles.featuredTitle}>
+            Harry Potter
+          </ThemedText>
+
+          <ThemedText style={styles.featuredDesc}>
+            Enter a magical world of adventure and mystery.
+          </ThemedText>
+        </ThemedView>
+
+        <ThemedText style={styles.sectionTitle}>
+          Popular Books
+        </ThemedText>
+
+        <ThemedView style={styles.listItem}>
+          <ThemedText style={styles.listText}>
+            The Alchemist
+          </ThemedText>
+        </ThemedView>
+
+        <ThemedView style={styles.listItem}>
+          <ThemedText style={styles.listText}>
+            Atomic Habits
+          </ThemedText>
+        </ThemedView>
+
+        <ThemedView style={styles.listItem}>
+          <ThemedText style={styles.listText}>
+            The Hobbit
+          </ThemedText>
+        </ThemedView>
+      </ScrollView>
     </ThemedView>
   );
 }
@@ -65,38 +69,41 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    paddingHorizontal: 20,
+  },
+  scrollContent: {
+    paddingTop: 48,
+    paddingBottom: 120,
   },
   header: {
     fontSize: 34,
     fontWeight: 'bold',
-    marginTop: 30,
-    marginBottom: 8,
+    marginBottom: 6,
   },
   subtitleText: {
     fontSize: 18,
-    marginBottom: 35,
-    opacity: 0.6, // Replaces 'gray'
+    marginBottom: 28,
+    opacity: 0.6,
   },
   infoText: {
     fontSize: 15,
-    marginBottom: 8,
+    marginBottom: 6,
     opacity: 0.6,
   },
   infoTextBottom: {
     fontSize: 15,
-    marginBottom: 35,
+    marginBottom: 30,
     opacity: 0.6,
   },
   featuredCard: {
-    padding: 20,
-    borderRadius: 15,
+    padding: 22,
+    borderRadius: 18,
     marginBottom: 30,
     borderWidth: 1,
-    borderColor: 'rgba(150, 150, 150, 0.2)', // Replaces hardcoded '#1E1E1E' to support both themes
+    borderColor: 'rgba(150, 150, 150, 0.2)',
   },
   featuredLabel: {
-    fontSize: 16,
+    fontSize: 15,
     marginBottom: 8,
     opacity: 0.6,
   },
@@ -107,16 +114,17 @@ const styles = StyleSheet.create({
   },
   featuredDesc: {
     fontSize: 16,
-    opacity: 0.8, // Replaces 'lightgray'
+    opacity: 0.8,
+    lineHeight: 22,
   },
   sectionTitle: {
     fontSize: 24,
     fontWeight: 'bold',
-    marginBottom: 18,
+    marginBottom: 16,
   },
   listItem: {
     padding: 18,
-    borderRadius: 12,
+    borderRadius: 14,
     marginBottom: 12,
     borderWidth: 1,
     borderColor: 'rgba(150, 150, 150, 0.2)',
